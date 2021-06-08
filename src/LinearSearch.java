@@ -28,7 +28,7 @@ public class LinearSearch<E> {
                 new Student("Charles")
         };
 
-        Student bobo = new Student("Bobo");
+        Student bobo = new Student("bobo");
 
         int res3 = LinearSearch.search(students,bobo);
         System.out.println(res3);

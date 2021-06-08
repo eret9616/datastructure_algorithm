@@ -20,7 +20,7 @@ public class Student {
 
 
         Student another = (Student)student;
-        return this.name.equals(another.name);
+        return this.name.toLowerCase().equals(another.name.toLowerCase());
     }
 
 }
