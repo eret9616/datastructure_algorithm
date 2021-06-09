@@ -11,29 +11,19 @@ public class LinearSearch<E> {
     }
 
     public  static  void main(String[] args) {
+        int[] dataSize = {1000000,10000000};
 
-        Integer[] data ={24,18,12,9,16,66,32,4};
+        for(int n:dataSize){
+                Integer[] data = ArrayGenerator.generateOrderedArray(n);
+                long startTime = System.nanoTime();
 
-        int res = LinearSearch.search(data,16);
+                for(int k=0;k<100;k++)
+                    LinearSearch.search(data,n);
 
-        System.out.println(res);
-
-        int res2 = LinearSearch.search(data,666);
-        System.out.println(res2);
-
-
-        Student[] students = {
-                new Student("Alice"),
-                new Student("Bobo"),
-                new Student("Charles")
-        };
-
-        Student bobo = new Student("bobo");
-
-        int res3 = LinearSearch.search(students,bobo);
-        System.out.println(res3);
-
+                long endTime = System.nanoTime();
+                double time = (endTime - startTime) / 1000000000.0;
+                System.out.println(("n = " + n + ", 100 runs : " +time + " s"));
+        }
     }
-
 }
 
